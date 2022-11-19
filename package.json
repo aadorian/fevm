@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "start": "streamlit run main.py"
+  },
+  "dependencies": {
+    "@truffle/hdwallet-provider": "^2.1.1",
+    "dotenv": "^16.0.3",
+    "truffle": "^5.6.6"
+  },
+  "devDependencies": {
+    "truffle-plugin-verify": "^0.6.0"
+  }
+}

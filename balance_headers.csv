@@ -1,0 +1,5 @@
+Field,Type,Description
+Value,string,token amount
+token amount,object, 
+Symbol,string,Canonical symbol associated with a currency
+Decimals,integer,Number of decimal places in the standard unit representation of the amount

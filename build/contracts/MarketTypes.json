@@ -1,0 +1,1548 @@
+{
+  "contractName": "MarketTypes",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"author\":\"Zondax AG\",\"kind\":\"dev\",\"methods\":{},\"title\":\"Filecoin market actor types for Solidity.\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/types/MarketTypes.sol\":\"MarketTypes\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/types/MarketTypes.sol\":{\"keccak256\":\"0x27cca488186e3170f0e1cd8311a00c502eba376a796f465f47acbf6a6240d8a0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://0bc2c0c4c795323b6ec52735d4d19d405b74b44999fd660f2649d4527a413190\",\"dweb:/ipfs/QmbPUpfJTG3tudLJRSHbAETGjtrHgAHz4LRBmm6HV6tQHv\"]}},\"version\":1}",
+  "bytecode": "0x60566050600b82828239805160001a6073146043577f4e487b7100000000000000000000000000000000000000000000000000000000600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea26469706673582212200c8622706d6862ecfb5cdad97b585e3d8904745bb7ceca5ecd7a9cacba342f6564736f6c63430008110033",
+  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea26469706673582212200c8622706d6862ecfb5cdad97b585e3d8904745bb7ceca5ecd7a9cacba342f6564736f6c63430008110033",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "150:2122:5:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "150:2122:5:-:0;;;;;;;;",
+  "source": "// SPDX-License-Identifier: Apache-2.0\npragma solidity >=0.4.25 <=0.8.17;\n\n/// @title Filecoin market actor types for Solidity.\n/// @author Zondax AG\nlibrary MarketTypes {\n    struct MockDeal {\n        uint64 id;\n        string cid;\n        uint64 size;\n        bool verified;\n        string client;\n        string provider;\n        string label;\n        int64 start;\n        int64 end;\n        uint256 price_per_epoch;\n        uint256 provider_collateral;\n        uint256 client_collateral;\n        int64 activated;\n        int64 terminated;\n    }\n\n    struct AddBalanceParams {\n        string provider_or_client;\n    }\n\n    struct WithdrawBalanceParams {\n        string provider_or_client;\n        uint256 tokenAmount;\n    }\n\n    struct WithdrawBalanceReturn {\n        uint256 amount_withdrawn;\n    }\n\n    struct GetBalanceReturn {\n        uint256 balance;\n        uint256 locked;\n    }\n\n    struct GetDealDataCommitmentParams {\n        uint64 id;\n    }\n\n    struct GetDealDataCommitmentReturn {\n        bytes data;\n        uint64 size;\n    }\n\n    struct GetDealClientParams {\n        uint64 id;\n    }\n\n    struct GetDealClientReturn {\n        string client;\n    }\n\n    struct GetDealProviderParams {\n        uint64 id;\n    }\n\n    struct GetDealProviderReturn {\n        string provider;\n    }\n\n    struct GetDealLabelParams {\n        uint64 id;\n    }\n\n    struct GetDealLabelReturn {\n        string label;\n    }\n\n    struct GetDealTermParams {\n        uint64 id;\n    }\n\n    struct GetDealTermReturn {\n        int64 start;\n        int64 end;\n    }\n\n    struct GetDealEpochPriceParams {\n        uint64 id;\n    }\n\n    struct GetDealEpochPriceReturn {\n        uint256 price_per_epoch;\n    }\n\n    struct GetDealClientCollateralParams {\n        uint64 id;\n    }\n\n    struct GetDealClientCollateralReturn {\n        uint256 collateral;\n    }\n\n    struct GetDealProviderCollateralParams {\n        uint64 id;\n    }\n\n    struct GetDealProviderCollateralReturn {\n        uint256 collateral;\n    }\n\n    struct GetDealVerifiedParams {\n        uint64 id;\n    }\n\n    struct GetDealVerifiedReturn {\n        bool verified;\n    }\n\n    struct GetDealActivationParams {\n        uint64 id;\n    }\n\n    struct GetDealActivationReturn {\n        int64 activated;\n        int64 terminated;\n    }\n}",
+  "sourcePath": "/Users/user/Desktop/fevm/contracts/types/MarketTypes.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/types/MarketTypes.sol",
+    "exportedSymbols": {
+      "MarketTypes": [
+        1390
+      ]
+    },
+    "id": 1391,
+    "license": "Apache-2.0",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1277,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".25",
+          "<=",
+          "0.8",
+          ".17"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "39:34:5"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "MarketTypes",
+        "contractDependencies": [],
+        "contractKind": "library",
+        "documentation": {
+          "id": 1278,
+          "nodeType": "StructuredDocumentation",
+          "src": "75:75:5",
+          "text": "@title Filecoin market actor types for Solidity.\n @author Zondax AG"
+        },
+        "fullyImplemented": true,
+        "id": 1390,
+        "linearizedBaseContracts": [
+          1390
+        ],
+        "name": "MarketTypes",
+        "nameLocation": "158:11:5",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "MarketTypes.MockDeal",
+            "id": 1307,
+            "members": [
+              {
+                "constant": false,
+                "id": 1280,
+                "mutability": "mutable",
+                "name": "id",
+                "nameLocation": "209:2:5",
+                "nodeType": "VariableDeclaration",
+                "scope": 1307,
+                "src": "202:9:5",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint64",
+                  "typeString": "uint64"
+                },
+                "typeName": {
+                  "id": 1279,
+                  "name": "uint64",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "202:6:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1282,
+                "mutability": "mutable",
+                "name": "cid",
+                "nameLocation": "228:3:5",
+                "nodeType": "VariableDeclaration",
+                "scope": 1307,
+                "src": "221:10:5",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 1281,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "221:6:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1284,
+                "mutability": "mutable",
+                "name": "size",
+                "nameLocation": "248:4:5",
+                "nodeType": "VariableDeclaration",
+                "scope": 1307,
+                "src": "241:11:5",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint64",
+                  "typeString": "uint64"
+                },
+                "typeName": {
+                  "id": 1283,
+                  "name": "uint64",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "241:6:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1286,
+                "mutability": "mutable",
+                "name": "verified",
+                "nameLocation": "267:8:5",
+                "nodeType": "VariableDeclaration",
+                "scope": 1307,
+                "src": "262:13:5",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 1285,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "262:4:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1288,
+                "mutability": "mutable",
+                "name": "client",
+                "nameLocation": "292:6:5",
+                "nodeType": "VariableDeclaration",
+                "scope": 1307,
+                "src": "285:13:5",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 1287,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "285:6:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1290,
+                "mutability": "mutable",
+                "name": "provider",
+                "nameLocation": "315:8:5",
+                "nodeType": "VariableDeclaration",
+                "scope": 1307,
+                "src": "308:15:5",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 1289,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "308:6:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1292,
+                "mutability": "mutable",
+                "name": "label",
+                "nameLocation": "340:5:5",
+                "nodeType": "VariableDeclaration",
+                "scope": 1307,
+                "src": "333:12:5",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 1291,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "333:6:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1294,
+                "mutability": "mutable",
+                "name": "start",
+                "nameLocation": "361:5:5",
+                "nodeType": "VariableDeclaration",
+                "scope": 1307,
+                "src": "355:11:5",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_int64",
+                  "typeString": "int64"
+                },
+                "typeName": {
+                  "id": 1293,
+                  "name": "int64",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "355:5:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int64",
+                    "typeString": "int64"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1296,
+                "mutability": "mutable",
+                "name": "end",
+                "nameLocation": "382:3:5",
+                "nodeType": "VariableDeclaration",
+                "scope": 1307,
+                "src": "376:9:5",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_int64",
+                  "typeString": "int64"
+                },
+                "typeName": {
+                  "id": 1295,
+                  "name": "int64",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "376:5:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int64",
+                    "typeString": "int64"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1298,
+                "mutability": "mutable",
+                "name": "price_per_epoch",
+                "nameLocation": "403:15:5",
+                "nodeType": "VariableDeclaration",
+                "scope": 1307,
+                "src": "395:23:5",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 1297,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "395:7:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1300,
+                "mutability": "mutable",
+                "name": "provider_collateral",
+                "nameLocation": "436:19:5",
+                "nodeType": "VariableDeclaration",
+                "scope": 1307,
+                "src": "428:27:5",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 1299,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "428:7:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1302,
+                "mutability": "mutable",
+                "name": "client_collateral",
+                "nameLocation": "473:17:5",
+                "nodeType": "VariableDeclaration",
+                "scope": 1307,
+                "src": "465:25:5",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 1301,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "465:7:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1304,
+                "mutability": "mutable",
+                "name": "activated",
+                "nameLocation": "506:9:5",
+                "nodeType": "VariableDeclaration",
+                "scope": 1307,
+                "src": "500:15:5",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_int64",
+                  "typeString": "int64"
+                },
+                "typeName": {
+                  "id": 1303,
+                  "name": "int64",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "500:5:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int64",
+                    "typeString": "int64"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1306,
+                "mutability": "mutable",
+                "name": "terminated",
+                "nameLocation": "531:10:5",
+                "nodeType": "VariableDeclaration",
+                "scope": 1307,
+                "src": "525:16:5",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_int64",
+                  "typeString": "int64"
+                },
+                "typeName": {
+                  "id": 1305,
+                  "name": "int64",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "525:5:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int64",
+                    "typeString": "int64"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "MockDeal",
+            "nameLocation": "183:8:5",
+            "nodeType": "StructDefinition",
+            "scope": 1390,
+            "src": "176:372:5",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "MarketTypes.AddBalanceParams",
+            "id": 1310,
+            "members": [
+              {
+                "constant": false,
+                "id": 1309,
+                "mutability": "mutable",
+                "name": "provider_or_client",
+                "nameLocation": "595:18:5",
+                "nodeType": "VariableDeclaration",
+                "scope": 1310,
+                "src": "588:25:5",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 1308,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "588:6:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "AddBalanceParams",
+            "nameLocation": "561:16:5",
+            "nodeType": "StructDefinition",
+            "scope": 1390,
+            "src": "554:66:5",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "MarketTypes.WithdrawBalanceParams",
+            "id": 1315,
+            "members": [
+              {
+                "constant": false,
+                "id": 1312,
+                "mutability": "mutable",
+                "name": "provider_or_client",
+                "nameLocation": "672:18:5",
+                "nodeType": "VariableDeclaration",
+                "scope": 1315,
+                "src": "665:25:5",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 1311,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "665:6:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1314,
+                "mutability": "mutable",
+                "name": "tokenAmount",
+                "nameLocation": "708:11:5",
+                "nodeType": "VariableDeclaration",
+                "scope": 1315,
+                "src": "700:19:5",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 1313,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "700:7:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "WithdrawBalanceParams",
+            "nameLocation": "633:21:5",
+            "nodeType": "StructDefinition",
+            "scope": 1390,
+            "src": "626:100:5",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "MarketTypes.WithdrawBalanceReturn",
+            "id": 1318,
+            "members": [
+              {
+                "constant": false,
+                "id": 1317,
+                "mutability": "mutable",
+                "name": "amount_withdrawn",
+                "nameLocation": "779:16:5",
+                "nodeType": "VariableDeclaration",
+                "scope": 1318,
+                "src": "771:24:5",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 1316,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "771:7:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "WithdrawBalanceReturn",
+            "nameLocation": "739:21:5",
+            "nodeType": "StructDefinition",
+            "scope": 1390,
+            "src": "732:70:5",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "MarketTypes.GetBalanceReturn",
+            "id": 1323,
+            "members": [
+              {
+                "constant": false,
+                "id": 1320,
+                "mutability": "mutable",
+                "name": "balance",
+                "nameLocation": "850:7:5",
+                "nodeType": "VariableDeclaration",
+                "scope": 1323,
+                "src": "842:15:5",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 1319,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "842:7:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1322,
+                "mutability": "mutable",
+                "name": "locked",
+                "nameLocation": "875:6:5",
+                "nodeType": "VariableDeclaration",
+                "scope": 1323,
+                "src": "867:14:5",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 1321,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "867:7:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "GetBalanceReturn",
+            "nameLocation": "815:16:5",
+            "nodeType": "StructDefinition",
+            "scope": 1390,
+            "src": "808:80:5",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "MarketTypes.GetDealDataCommitmentParams",
+            "id": 1326,
+            "members": [
+              {
+                "constant": false,
+                "id": 1325,
+                "mutability": "mutable",
+                "name": "id",
+                "nameLocation": "946:2:5",
+                "nodeType": "VariableDeclaration",
+                "scope": 1326,
+                "src": "939:9:5",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint64",
+                  "typeString": "uint64"
+                },
+                "typeName": {
+                  "id": 1324,
+                  "name": "uint64",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "939:6:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "GetDealDataCommitmentParams",
+            "nameLocation": "901:27:5",
+            "nodeType": "StructDefinition",
+            "scope": 1390,
+            "src": "894:61:5",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "MarketTypes.GetDealDataCommitmentReturn",
+            "id": 1331,
+            "members": [
+              {
+                "constant": false,
+                "id": 1328,
+                "mutability": "mutable",
+                "name": "data",
+                "nameLocation": "1012:4:5",
+                "nodeType": "VariableDeclaration",
+                "scope": 1331,
+                "src": "1006:10:5",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes_storage_ptr",
+                  "typeString": "bytes"
+                },
+                "typeName": {
+                  "id": 1327,
+                  "name": "bytes",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1006:5:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_storage_ptr",
+                    "typeString": "bytes"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1330,
+                "mutability": "mutable",
+                "name": "size",
+                "nameLocation": "1033:4:5",
+                "nodeType": "VariableDeclaration",
+                "scope": 1331,
+                "src": "1026:11:5",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint64",
+                  "typeString": "uint64"
+                },
+                "typeName": {
+                  "id": 1329,
+                  "name": "uint64",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1026:6:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "GetDealDataCommitmentReturn",
+            "nameLocation": "968:27:5",
+            "nodeType": "StructDefinition",
+            "scope": 1390,
+            "src": "961:83:5",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "MarketTypes.GetDealClientParams",
+            "id": 1334,
+            "members": [
+              {
+                "constant": false,
+                "id": 1333,
+                "mutability": "mutable",
+                "name": "id",
+                "nameLocation": "1094:2:5",
+                "nodeType": "VariableDeclaration",
+                "scope": 1334,
+                "src": "1087:9:5",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint64",
+                  "typeString": "uint64"
+                },
+                "typeName": {
+                  "id": 1332,
+                  "name": "uint64",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1087:6:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "GetDealClientParams",
+            "nameLocation": "1057:19:5",
+            "nodeType": "StructDefinition",
+            "scope": 1390,
+            "src": "1050:53:5",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "MarketTypes.GetDealClientReturn",
+            "id": 1337,
+            "members": [
+              {
+                "constant": false,
+                "id": 1336,
+                "mutability": "mutable",
+                "name": "client",
+                "nameLocation": "1153:6:5",
+                "nodeType": "VariableDeclaration",
+                "scope": 1337,
+                "src": "1146:13:5",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 1335,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1146:6:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "GetDealClientReturn",
+            "nameLocation": "1116:19:5",
+            "nodeType": "StructDefinition",
+            "scope": 1390,
+            "src": "1109:57:5",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "MarketTypes.GetDealProviderParams",
+            "id": 1340,
+            "members": [
+              {
+                "constant": false,
+                "id": 1339,
+                "mutability": "mutable",
+                "name": "id",
+                "nameLocation": "1218:2:5",
+                "nodeType": "VariableDeclaration",
+                "scope": 1340,
+                "src": "1211:9:5",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint64",
+                  "typeString": "uint64"
+                },
+                "typeName": {
+                  "id": 1338,
+                  "name": "uint64",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1211:6:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "GetDealProviderParams",
+            "nameLocation": "1179:21:5",
+            "nodeType": "StructDefinition",
+            "scope": 1390,
+            "src": "1172:55:5",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "MarketTypes.GetDealProviderReturn",
+            "id": 1343,
+            "members": [
+              {
+                "constant": false,
+                "id": 1342,
+                "mutability": "mutable",
+                "name": "provider",
+                "nameLocation": "1279:8:5",
+                "nodeType": "VariableDeclaration",
+                "scope": 1343,
+                "src": "1272:15:5",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 1341,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1272:6:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "GetDealProviderReturn",
+            "nameLocation": "1240:21:5",
+            "nodeType": "StructDefinition",
+            "scope": 1390,
+            "src": "1233:61:5",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "MarketTypes.GetDealLabelParams",
+            "id": 1346,
+            "members": [
+              {
+                "constant": false,
+                "id": 1345,
+                "mutability": "mutable",
+                "name": "id",
+                "nameLocation": "1343:2:5",
+                "nodeType": "VariableDeclaration",
+                "scope": 1346,
+                "src": "1336:9:5",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint64",
+                  "typeString": "uint64"
+                },
+                "typeName": {
+                  "id": 1344,
+                  "name": "uint64",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1336:6:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "GetDealLabelParams",
+            "nameLocation": "1307:18:5",
+            "nodeType": "StructDefinition",
+            "scope": 1390,
+            "src": "1300:52:5",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "MarketTypes.GetDealLabelReturn",
+            "id": 1349,
+            "members": [
+              {
+                "constant": false,
+                "id": 1348,
+                "mutability": "mutable",
+                "name": "label",
+                "nameLocation": "1401:5:5",
+                "nodeType": "VariableDeclaration",
+                "scope": 1349,
+                "src": "1394:12:5",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 1347,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1394:6:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "GetDealLabelReturn",
+            "nameLocation": "1365:18:5",
+            "nodeType": "StructDefinition",
+            "scope": 1390,
+            "src": "1358:55:5",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "MarketTypes.GetDealTermParams",
+            "id": 1352,
+            "members": [
+              {
+                "constant": false,
+                "id": 1351,
+                "mutability": "mutable",
+                "name": "id",
+                "nameLocation": "1461:2:5",
+                "nodeType": "VariableDeclaration",
+                "scope": 1352,
+                "src": "1454:9:5",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint64",
+                  "typeString": "uint64"
+                },
+                "typeName": {
+                  "id": 1350,
+                  "name": "uint64",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1454:6:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "GetDealTermParams",
+            "nameLocation": "1426:17:5",
+            "nodeType": "StructDefinition",
+            "scope": 1390,
+            "src": "1419:51:5",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "MarketTypes.GetDealTermReturn",
+            "id": 1357,
+            "members": [
+              {
+                "constant": false,
+                "id": 1354,
+                "mutability": "mutable",
+                "name": "start",
+                "nameLocation": "1517:5:5",
+                "nodeType": "VariableDeclaration",
+                "scope": 1357,
+                "src": "1511:11:5",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_int64",
+                  "typeString": "int64"
+                },
+                "typeName": {
+                  "id": 1353,
+                  "name": "int64",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1511:5:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int64",
+                    "typeString": "int64"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1356,
+                "mutability": "mutable",
+                "name": "end",
+                "nameLocation": "1538:3:5",
+                "nodeType": "VariableDeclaration",
+                "scope": 1357,
+                "src": "1532:9:5",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_int64",
+                  "typeString": "int64"
+                },
+                "typeName": {
+                  "id": 1355,
+                  "name": "int64",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1532:5:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int64",
+                    "typeString": "int64"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "GetDealTermReturn",
+            "nameLocation": "1483:17:5",
+            "nodeType": "StructDefinition",
+            "scope": 1390,
+            "src": "1476:72:5",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "MarketTypes.GetDealEpochPriceParams",
+            "id": 1360,
+            "members": [
+              {
+                "constant": false,
+                "id": 1359,
+                "mutability": "mutable",
+                "name": "id",
+                "nameLocation": "1602:2:5",
+                "nodeType": "VariableDeclaration",
+                "scope": 1360,
+                "src": "1595:9:5",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint64",
+                  "typeString": "uint64"
+                },
+                "typeName": {
+                  "id": 1358,
+                  "name": "uint64",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1595:6:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "GetDealEpochPriceParams",
+            "nameLocation": "1561:23:5",
+            "nodeType": "StructDefinition",
+            "scope": 1390,
+            "src": "1554:57:5",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "MarketTypes.GetDealEpochPriceReturn",
+            "id": 1363,
+            "members": [
+              {
+                "constant": false,
+                "id": 1362,
+                "mutability": "mutable",
+                "name": "price_per_epoch",
+                "nameLocation": "1666:15:5",
+                "nodeType": "VariableDeclaration",
+                "scope": 1363,
+                "src": "1658:23:5",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 1361,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1658:7:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "GetDealEpochPriceReturn",
+            "nameLocation": "1624:23:5",
+            "nodeType": "StructDefinition",
+            "scope": 1390,
+            "src": "1617:71:5",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "MarketTypes.GetDealClientCollateralParams",
+            "id": 1366,
+            "members": [
+              {
+                "constant": false,
+                "id": 1365,
+                "mutability": "mutable",
+                "name": "id",
+                "nameLocation": "1748:2:5",
+                "nodeType": "VariableDeclaration",
+                "scope": 1366,
+                "src": "1741:9:5",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint64",
+                  "typeString": "uint64"
+                },
+                "typeName": {
+                  "id": 1364,
+                  "name": "uint64",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1741:6:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "GetDealClientCollateralParams",
+            "nameLocation": "1701:29:5",
+            "nodeType": "StructDefinition",
+            "scope": 1390,
+            "src": "1694:63:5",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "MarketTypes.GetDealClientCollateralReturn",
+            "id": 1369,
+            "members": [
+              {
+                "constant": false,
+                "id": 1368,
+                "mutability": "mutable",
+                "name": "collateral",
+                "nameLocation": "1818:10:5",
+                "nodeType": "VariableDeclaration",
+                "scope": 1369,
+                "src": "1810:18:5",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 1367,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1810:7:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "GetDealClientCollateralReturn",
+            "nameLocation": "1770:29:5",
+            "nodeType": "StructDefinition",
+            "scope": 1390,
+            "src": "1763:72:5",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "MarketTypes.GetDealProviderCollateralParams",
+            "id": 1372,
+            "members": [
+              {
+                "constant": false,
+                "id": 1371,
+                "mutability": "mutable",
+                "name": "id",
+                "nameLocation": "1897:2:5",
+                "nodeType": "VariableDeclaration",
+                "scope": 1372,
+                "src": "1890:9:5",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint64",
+                  "typeString": "uint64"
+                },
+                "typeName": {
+                  "id": 1370,
+                  "name": "uint64",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1890:6:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "GetDealProviderCollateralParams",
+            "nameLocation": "1848:31:5",
+            "nodeType": "StructDefinition",
+            "scope": 1390,
+            "src": "1841:65:5",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "MarketTypes.GetDealProviderCollateralReturn",
+            "id": 1375,
+            "members": [
+              {
+                "constant": false,
+                "id": 1374,
+                "mutability": "mutable",
+                "name": "collateral",
+                "nameLocation": "1969:10:5",
+                "nodeType": "VariableDeclaration",
+                "scope": 1375,
+                "src": "1961:18:5",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 1373,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1961:7:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "GetDealProviderCollateralReturn",
+            "nameLocation": "1919:31:5",
+            "nodeType": "StructDefinition",
+            "scope": 1390,
+            "src": "1912:74:5",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "MarketTypes.GetDealVerifiedParams",
+            "id": 1378,
+            "members": [
+              {
+                "constant": false,
+                "id": 1377,
+                "mutability": "mutable",
+                "name": "id",
+                "nameLocation": "2038:2:5",
+                "nodeType": "VariableDeclaration",
+                "scope": 1378,
+                "src": "2031:9:5",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint64",
+                  "typeString": "uint64"
+                },
+                "typeName": {
+                  "id": 1376,
+                  "name": "uint64",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "2031:6:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "GetDealVerifiedParams",
+            "nameLocation": "1999:21:5",
+            "nodeType": "StructDefinition",
+            "scope": 1390,
+            "src": "1992:55:5",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "MarketTypes.GetDealVerifiedReturn",
+            "id": 1381,
+            "members": [
+              {
+                "constant": false,
+                "id": 1380,
+                "mutability": "mutable",
+                "name": "verified",
+                "nameLocation": "2097:8:5",
+                "nodeType": "VariableDeclaration",
+                "scope": 1381,
+                "src": "2092:13:5",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 1379,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "2092:4:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "GetDealVerifiedReturn",
+            "nameLocation": "2060:21:5",
+            "nodeType": "StructDefinition",
+            "scope": 1390,
+            "src": "2053:59:5",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "MarketTypes.GetDealActivationParams",
+            "id": 1384,
+            "members": [
+              {
+                "constant": false,
+                "id": 1383,
+                "mutability": "mutable",
+                "name": "id",
+                "nameLocation": "2166:2:5",
+                "nodeType": "VariableDeclaration",
+                "scope": 1384,
+                "src": "2159:9:5",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint64",
+                  "typeString": "uint64"
+                },
+                "typeName": {
+                  "id": 1382,
+                  "name": "uint64",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "2159:6:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "GetDealActivationParams",
+            "nameLocation": "2125:23:5",
+            "nodeType": "StructDefinition",
+            "scope": 1390,
+            "src": "2118:57:5",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "MarketTypes.GetDealActivationReturn",
+            "id": 1389,
+            "members": [
+              {
+                "constant": false,
+                "id": 1386,
+                "mutability": "mutable",
+                "name": "activated",
+                "nameLocation": "2228:9:5",
+                "nodeType": "VariableDeclaration",
+                "scope": 1389,
+                "src": "2222:15:5",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_int64",
+                  "typeString": "int64"
+                },
+                "typeName": {
+                  "id": 1385,
+                  "name": "int64",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "2222:5:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int64",
+                    "typeString": "int64"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1388,
+                "mutability": "mutable",
+                "name": "terminated",
+                "nameLocation": "2253:10:5",
+                "nodeType": "VariableDeclaration",
+                "scope": 1389,
+                "src": "2247:16:5",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_int64",
+                  "typeString": "int64"
+                },
+                "typeName": {
+                  "id": 1387,
+                  "name": "int64",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "2247:5:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int64",
+                    "typeString": "int64"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "GetDealActivationReturn",
+            "nameLocation": "2188:23:5",
+            "nodeType": "StructDefinition",
+            "scope": 1390,
+            "src": "2181:89:5",
+            "visibility": "public"
+          }
+        ],
+        "scope": 1391,
+        "src": "150:2122:5",
+        "usedErrors": []
+      }
+    ],
+    "src": "39:2233:5"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.17+commit.8df45f5f.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.10",
+  "updatedAt": "2022-11-19T23:32:54.660Z",
+  "devdoc": {
+    "author": "Zondax AG",
+    "kind": "dev",
+    "methods": {},
+    "title": "Filecoin market actor types for Solidity.",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

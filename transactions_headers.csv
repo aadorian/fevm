@@ -1,0 +1,14 @@
+Field,Type,Description
+-res, object, 
+height,number,Height at which the transaction was executed
+tx_timestamp,number,Tipset timestamp with time zone
+tx_hash,string,Transaction CID
+tx_from,string,Transaction address emitter
+tx_to,string,Transaction address receiver
+amount,number,Amount of tokens involved in the transaction
+status,string,Transaction status [OK - FAIL]
+tx_type,string,Transaction type
+tx_metadata,string,Misc metadata
+TotalPages,number
+
+

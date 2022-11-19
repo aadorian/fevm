@@ -1,0 +1,537 @@
+{
+  "contractName": "MinerTypes",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"author\":\"Zondax AG\",\"kind\":\"dev\",\"methods\":{},\"title\":\"Filecoin miner actor types for Solidity.\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/types/MinerTypes.sol\":\"MinerTypes\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/types/CommonTypes.sol\":{\"keccak256\":\"0xbda5686d00df0d64902eb492978523e502dcd0301070d261e3db4077fc60391f\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://a284bc1edf448478b2e73f03bc1530ffabd06928429933f15eb27c906bd8ea4a\",\"dweb:/ipfs/QmXGrEn4ANzWKp8arFdF8Z9m5yrMsyJMMkavSe7YVKkCsJ\"]},\"project:/contracts/types/MinerTypes.sol\":{\"keccak256\":\"0xe9a24110fbe014af2b16b1f9814cbc2be6d105783124fca039319a173d6e5180\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://cd9ce003b48fb062450c202a0d52155de735455b1942670c411be34681e6d885\",\"dweb:/ipfs/QmTDtBJREHNHWARHuPz348E5XCjtVtRGk2Qgt9kHHqb5Fn\"]}},\"version\":1}",
+  "bytecode": "0x60566050600b82828239805160001a6073146043577f4e487b7100000000000000000000000000000000000000000000000000000000600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220cd90a0f27039f15bdca2367f1bf730464232209e689a592ac7a7ec321266154f64736f6c63430008110033",
+  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220cd90a0f27039f15bdca2367f1bf730464232209e689a592ac7a7ec321266154f64736f6c63430008110033",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "178:731:6:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "178:731:6:-:0;;;;;;;;",
+  "source": "// SPDX-License-Identifier: Apache-2.0\npragma solidity >=0.4.25 <=0.8.17;\n\nimport \"./CommonTypes.sol\";\n\n/// @title Filecoin miner actor types for Solidity.\n/// @author Zondax AG\nlibrary MinerTypes {\n    struct GetOwnerReturn {\n        string owner;\n    }\n    struct IsControllingAddressParam {\n        string addr;\n    }\n    struct IsControllingAddressReturn {\n        bool is_controlling;\n    }\n    struct GetSectorSizeReturn {\n        uint64 sector_size;\n    }\n    struct GetAvailableBalanceReturn {\n        int256 available_balance;\n    }\n    struct GetVestingFundsReturn {\n        CommonTypes.VestingFunds[] vesting_funds;\n    }\n\n    struct ChangeBeneficiaryParams {\n        string new_beneficiary;\n        int256 new_quota;\n        uint64 new_expiration;\n    }\n\n    struct GetBeneficiaryReturn {\n        CommonTypes.ActiveBeneficiary active;\n        CommonTypes.PendingBeneficiaryChange proposed;\n    }\n}",
+  "sourcePath": "/Users/user/Desktop/fevm/contracts/types/MinerTypes.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/types/MinerTypes.sol",
+    "exportedSymbols": {
+      "CommonTypes": [
+        1275
+      ],
+      "MinerTypes": [
+        1429
+      ]
+    },
+    "id": 1430,
+    "license": "Apache-2.0",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1392,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".25",
+          "<=",
+          "0.8",
+          ".17"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "39:34:6"
+      },
+      {
+        "absolutePath": "project:/contracts/types/CommonTypes.sol",
+        "file": "./CommonTypes.sol",
+        "id": 1393,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 1430,
+        "sourceUnit": 1276,
+        "src": "75:27:6",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "MinerTypes",
+        "contractDependencies": [],
+        "contractKind": "library",
+        "documentation": {
+          "id": 1394,
+          "nodeType": "StructuredDocumentation",
+          "src": "104:74:6",
+          "text": "@title Filecoin miner actor types for Solidity.\n @author Zondax AG"
+        },
+        "fullyImplemented": true,
+        "id": 1429,
+        "linearizedBaseContracts": [
+          1429
+        ],
+        "name": "MinerTypes",
+        "nameLocation": "186:10:6",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "MinerTypes.GetOwnerReturn",
+            "id": 1397,
+            "members": [
+              {
+                "constant": false,
+                "id": 1396,
+                "mutability": "mutable",
+                "name": "owner",
+                "nameLocation": "242:5:6",
+                "nodeType": "VariableDeclaration",
+                "scope": 1397,
+                "src": "235:12:6",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 1395,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "235:6:6",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "GetOwnerReturn",
+            "nameLocation": "210:14:6",
+            "nodeType": "StructDefinition",
+            "scope": 1429,
+            "src": "203:51:6",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "MinerTypes.IsControllingAddressParam",
+            "id": 1400,
+            "members": [
+              {
+                "constant": false,
+                "id": 1399,
+                "mutability": "mutable",
+                "name": "addr",
+                "nameLocation": "309:4:6",
+                "nodeType": "VariableDeclaration",
+                "scope": 1400,
+                "src": "302:11:6",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 1398,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "302:6:6",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "IsControllingAddressParam",
+            "nameLocation": "266:25:6",
+            "nodeType": "StructDefinition",
+            "scope": 1429,
+            "src": "259:61:6",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "MinerTypes.IsControllingAddressReturn",
+            "id": 1403,
+            "members": [
+              {
+                "constant": false,
+                "id": 1402,
+                "mutability": "mutable",
+                "name": "is_controlling",
+                "nameLocation": "374:14:6",
+                "nodeType": "VariableDeclaration",
+                "scope": 1403,
+                "src": "369:19:6",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 1401,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "369:4:6",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "IsControllingAddressReturn",
+            "nameLocation": "332:26:6",
+            "nodeType": "StructDefinition",
+            "scope": 1429,
+            "src": "325:70:6",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "MinerTypes.GetSectorSizeReturn",
+            "id": 1406,
+            "members": [
+              {
+                "constant": false,
+                "id": 1405,
+                "mutability": "mutable",
+                "name": "sector_size",
+                "nameLocation": "444:11:6",
+                "nodeType": "VariableDeclaration",
+                "scope": 1406,
+                "src": "437:18:6",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint64",
+                  "typeString": "uint64"
+                },
+                "typeName": {
+                  "id": 1404,
+                  "name": "uint64",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "437:6:6",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "GetSectorSizeReturn",
+            "nameLocation": "407:19:6",
+            "nodeType": "StructDefinition",
+            "scope": 1429,
+            "src": "400:62:6",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "MinerTypes.GetAvailableBalanceReturn",
+            "id": 1409,
+            "members": [
+              {
+                "constant": false,
+                "id": 1408,
+                "mutability": "mutable",
+                "name": "available_balance",
+                "nameLocation": "517:17:6",
+                "nodeType": "VariableDeclaration",
+                "scope": 1409,
+                "src": "510:24:6",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_int256",
+                  "typeString": "int256"
+                },
+                "typeName": {
+                  "id": 1407,
+                  "name": "int256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "510:6:6",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "GetAvailableBalanceReturn",
+            "nameLocation": "474:25:6",
+            "nodeType": "StructDefinition",
+            "scope": 1429,
+            "src": "467:74:6",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "MinerTypes.GetVestingFundsReturn",
+            "id": 1414,
+            "members": [
+              {
+                "constant": false,
+                "id": 1413,
+                "mutability": "mutable",
+                "name": "vesting_funds",
+                "nameLocation": "612:13:6",
+                "nodeType": "VariableDeclaration",
+                "scope": 1414,
+                "src": "585:40:6",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_array$_t_struct$_VestingFunds_$1198_storage_$dyn_storage_ptr",
+                  "typeString": "struct CommonTypes.VestingFunds[]"
+                },
+                "typeName": {
+                  "baseType": {
+                    "id": 1411,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 1410,
+                      "name": "CommonTypes.VestingFunds",
+                      "nameLocations": [
+                        "585:11:6",
+                        "597:12:6"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 1198,
+                      "src": "585:24:6"
+                    },
+                    "referencedDeclaration": 1198,
+                    "src": "585:24:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_VestingFunds_$1198_storage_ptr",
+                      "typeString": "struct CommonTypes.VestingFunds"
+                    }
+                  },
+                  "id": 1412,
+                  "nodeType": "ArrayTypeName",
+                  "src": "585:26:6",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_struct$_VestingFunds_$1198_storage_$dyn_storage_ptr",
+                    "typeString": "struct CommonTypes.VestingFunds[]"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "GetVestingFundsReturn",
+            "nameLocation": "553:21:6",
+            "nodeType": "StructDefinition",
+            "scope": 1429,
+            "src": "546:86:6",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "MinerTypes.ChangeBeneficiaryParams",
+            "id": 1421,
+            "members": [
+              {
+                "constant": false,
+                "id": 1416,
+                "mutability": "mutable",
+                "name": "new_beneficiary",
+                "nameLocation": "686:15:6",
+                "nodeType": "VariableDeclaration",
+                "scope": 1421,
+                "src": "679:22:6",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 1415,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "679:6:6",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1418,
+                "mutability": "mutable",
+                "name": "new_quota",
+                "nameLocation": "718:9:6",
+                "nodeType": "VariableDeclaration",
+                "scope": 1421,
+                "src": "711:16:6",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_int256",
+                  "typeString": "int256"
+                },
+                "typeName": {
+                  "id": 1417,
+                  "name": "int256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "711:6:6",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1420,
+                "mutability": "mutable",
+                "name": "new_expiration",
+                "nameLocation": "744:14:6",
+                "nodeType": "VariableDeclaration",
+                "scope": 1421,
+                "src": "737:21:6",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint64",
+                  "typeString": "uint64"
+                },
+                "typeName": {
+                  "id": 1419,
+                  "name": "uint64",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "737:6:6",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "ChangeBeneficiaryParams",
+            "nameLocation": "645:23:6",
+            "nodeType": "StructDefinition",
+            "scope": 1429,
+            "src": "638:127:6",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "MinerTypes.GetBeneficiaryReturn",
+            "id": 1428,
+            "members": [
+              {
+                "constant": false,
+                "id": 1424,
+                "mutability": "mutable",
+                "name": "active",
+                "nameLocation": "839:6:6",
+                "nodeType": "VariableDeclaration",
+                "scope": 1428,
+                "src": "809:36:6",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_ActiveBeneficiary_$1038_storage_ptr",
+                  "typeString": "struct CommonTypes.ActiveBeneficiary"
+                },
+                "typeName": {
+                  "id": 1423,
+                  "nodeType": "UserDefinedTypeName",
+                  "pathNode": {
+                    "id": 1422,
+                    "name": "CommonTypes.ActiveBeneficiary",
+                    "nameLocations": [
+                      "809:11:6",
+                      "821:17:6"
+                    ],
+                    "nodeType": "IdentifierPath",
+                    "referencedDeclaration": 1038,
+                    "src": "809:29:6"
+                  },
+                  "referencedDeclaration": 1038,
+                  "src": "809:29:6",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_ActiveBeneficiary_$1038_storage_ptr",
+                    "typeString": "struct CommonTypes.ActiveBeneficiary"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1427,
+                "mutability": "mutable",
+                "name": "proposed",
+                "nameLocation": "892:8:6",
+                "nodeType": "VariableDeclaration",
+                "scope": 1428,
+                "src": "855:45:6",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_PendingBeneficiaryChange_$1025_storage_ptr",
+                  "typeString": "struct CommonTypes.PendingBeneficiaryChange"
+                },
+                "typeName": {
+                  "id": 1426,
+                  "nodeType": "UserDefinedTypeName",
+                  "pathNode": {
+                    "id": 1425,
+                    "name": "CommonTypes.PendingBeneficiaryChange",
+                    "nameLocations": [
+                      "855:11:6",
+                      "867:24:6"
+                    ],
+                    "nodeType": "IdentifierPath",
+                    "referencedDeclaration": 1025,
+                    "src": "855:36:6"
+                  },
+                  "referencedDeclaration": 1025,
+                  "src": "855:36:6",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_PendingBeneficiaryChange_$1025_storage_ptr",
+                    "typeString": "struct CommonTypes.PendingBeneficiaryChange"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "GetBeneficiaryReturn",
+            "nameLocation": "778:20:6",
+            "nodeType": "StructDefinition",
+            "scope": 1429,
+            "src": "771:136:6",
+            "visibility": "public"
+          }
+        ],
+        "scope": 1430,
+        "src": "178:731:6",
+        "usedErrors": []
+      }
+    ],
+    "src": "39:870:6"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.17+commit.8df45f5f.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.10",
+  "updatedAt": "2022-11-19T23:32:54.661Z",
+  "devdoc": {
+    "author": "Zondax AG",
+    "kind": "dev",
+    "methods": {},
+    "title": "Filecoin miner actor types for Solidity.",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}
